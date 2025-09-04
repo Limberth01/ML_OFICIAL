@@ -99,10 +99,19 @@
     .card:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,0,0,.12); }
 
     .card .thumb {
-      aspect-ratio: 1 / 1; background: #f1f5f9; display: grid; place-items: center; overflow: hidden;
+    height: 250px; /* 👈 define el alto de todas las miniaturas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f1f5f9;
+    overflow: hidden;
     }
-    .card img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
+    .card img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain; /* 👈 mantiene la proporción de la imagen */
+    }
     .card .body { padding: .8rem .9rem; display: grid; gap: .45rem; }
     .title { font-weight: 700; line-height: 1.2; }
     .meta { font-size: .88rem; color: var(--muted); display: flex; gap: .4rem; flex-wrap: wrap; }
@@ -228,9 +237,9 @@
      * { id, nombre, categoria, precio, imagen, descripcion, tags: [""], creado: "YYYY-MM-DD" }
      */
     const PRODUCTS = [
-      { id: "ZAP-001", nombre: "Zapatillas Runner Azul", categoria: "Zapatillas", precio: 399.99, imagen: "SUDADERAGAP(1).jpg", descripcion: "Zapatillas ligeras para uso diario, suela de EVA y malla transpirable.", tags: ["azul","running","unisex"], creado: "2025-07-12" },
-      { id: "ZAP-002", nombre: "Zapatillas Urban Negras", categoria: "Zapatillas", precio: 459.50, imagen: "SUDADERAROJA(1).jpg", descripcion: "Estilo urbano con plantilla memory foam y capellada de cuero sintético.", tags: ["negro","urbano"], creado: "2025-06-28" },
-      { id: "ZAP-003", nombre: "Zapatillas Retro Blanca", categoria: "Zapatillas", precio: 349.00, imagen: "SUETER(1).jpg", descripcion: "Clásicas de perfil bajo, combinan con todo.", tags: ["blanco","retro"], creado: "2025-05-30" },
+      { id: "ZAP-001", nombre: "Zapatillas Runner Azul", categoria: "Zapatillas", precio: 399.99, imagen: "SUDADERAGAP1.jpg", descripcion: "Zapatillas ligeras para uso diario, suela de EVA y malla transpirable.", tags: ["azul","running","unisex"], creado: "2025-07-12" },
+      { id: "ZAP-002", nombre: "Zapatillas Urban Negras", categoria: "Zapatillas", precio: 459.50, imagen: "SUDADERAROJA1.jpg", descripcion: "Estilo urbano con plantilla memory foam y capellada de cuero sintético.", tags: ["negro","urbano"], creado: "2025-06-28" },
+      { id: "ZAP-003", nombre: "Zapatillas Retro Blanca", categoria: "Zapatillas", precio: 349.00, imagen: "SUETER1.jpg", descripcion: "Clásicas de perfil bajo, combinan con todo.", tags: ["blanco","retro"], creado: "2025-05-30" },
       { id: "ROP-101", nombre: "Polera Oversize LM", categoria: "Ropa", precio: 110.00, imagen: "https://placehold.co/600x600/png?text=Polera+Oversize", descripcion: "100% algodón peinado, corte relajado.", tags: ["polera","blanco","unisex"], creado: "2025-07-05" },
       { id: "ROP-102", nombre: "Buzo Jogger Gris", categoria: "Ropa", precio: 160.00, imagen: "https://placehold.co/600x600/png?text=Jogger+Gris", descripcion: "French terry con puños elásticos, cómodo para todo el día.", tags: ["pantalón","gris"], creado: "2025-07-01" },
       { id: "ROP-103", nombre: "Campera Corta Viento", categoria: "Ropa", precio: 220.00, imagen: "https://placehold.co/600x600/png?text=Corta+Viento", descripcion: "Resistente al viento y salpicaduras, ideal para running urbano.", tags: ["campera","azul"], creado: "2025-06-20" },
